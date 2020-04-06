@@ -56,12 +56,4 @@ dom.on(test, "mouseenter", addFn);
 /* 用于删除事件监听 */
 // test.removeEventListener(eventName, fn) // TL,DR
 dom.off(test, "click", addFn);
-
-test.addEventListener("mousedown", function() {
-    console.log("鼠标按下了");
-    test.addEventListener("mousemove", addFn);
-    test.addEventListener("mouseup", function() {
-        console.log("鼠标抬起了");
-        test.removeEventListener("mousemove", addFn)
-    })
-});
+dom.toggle(test, "click", addFn);

@@ -167,5 +167,15 @@ window.dom = {
     off(node, eventName, fn) {
         console.log('点击取消事件')
         node.removeEventListener(eventName, fn)
+    },
+    toggle(node, eventName, fn) {
+        node.addEventListener("mousedown", function() {
+            console.log("鼠标按下了");
+            node.addEventListener("mousemove", fn);
+            node.addEventListener("mouseup", function() {
+                console.log("鼠标抬起了");
+                node.removeEventListener("mousemove", fn)
+            })
+        });
     }
 };
