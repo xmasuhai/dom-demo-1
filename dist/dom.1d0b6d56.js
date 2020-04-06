@@ -306,6 +306,16 @@ window.dom = {
   off: function off(node, eventName, fn) {
     console.log('点击取消事件');
     node.removeEventListener(eventName, fn);
+  },
+  toggle: function toggle(node, eventName, fn) {
+    node.addEventListener("mousedown", function () {
+      console.log("鼠标按下了");
+      node.addEventListener("mousemove", fn);
+      node.addEventListener("mouseup", function () {
+        console.log("鼠标抬起了");
+        node.removeEventListener("mousemove", fn);
+      });
+    });
   }
 };
 },{}],"C:/Users/Xmasu/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {

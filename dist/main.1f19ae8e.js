@@ -186,14 +186,7 @@ dom.on(test, "mouseenter", addFn);
 // test.removeEventListener(eventName, fn) // TL,DR
 
 dom.off(test, "click", addFn);
-test.addEventListener("mousedown", function () {
-  console.log("鼠标按下了");
-  test.addEventListener("mousemove", addFn);
-  test.addEventListener("mouseup", function () {
-    console.log("鼠标抬起了");
-    test.removeEventListener("mousemove", addFn);
-  });
-});
+dom.toggle(test, "click", addFn);
 },{}],"C:/Users/Xmasu/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
