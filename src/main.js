@@ -57,3 +57,19 @@ dom.on(test, "mouseenter", addFn);
 // test.removeEventListener(eventName, fn) // TL,DR
 dom.off(test, "click", addFn);
 dom.toggle(test, "click", addFn);
+/* 查 */
+const testDiv = dom.find('#test')[0]
+console.log(testDiv)
+const test2 = dom.find('#test2')[0]
+console.log(dom.find('.red', test2)[0])
+
+console.log(dom.parent(test))
+
+const s2 = dom.find('#s2')[0]
+console.log(dom.siblings(s2))
+console.log(dom.next(s2))
+console.log(dom.previous(s2))
+
+const t = dom.find('#travel')[0]
+dom.each(dom.children(t), (n) => dom.style(n, 'color', 'red'))
+console.log(dom.index(s2))
