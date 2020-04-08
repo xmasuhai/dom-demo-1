@@ -118,11 +118,25 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
+// 37
+console.log("任务 37 测试代码 开始");
+var div_1 = dom.find("#test_1 > .red")[0];
+console.log("div_1: ".concat(div_1)); // 获取对应的元素
+
+dom.style(div_1, "color", "red"); // 设置 div.style.color
+
+var divList = dom.find(".red"); // 获取多个 div.red 元素
+
+dom.each(divList, function (n) {
+  return console.log(n);
+});
+console.log("任务 37 测试代码 结束");
 /* 对比 document.createElement("div") 简化代码
  ** const div = dom.create("div")
  */
 
 /* 直接写出 HTML 结构 */
+
 var div = dom.create("<div><span id='newDiv'>newDiv</span></div>");
 var td = dom.create("<tr><td>TD</td></tr>");
 console.log(div);
@@ -134,9 +148,9 @@ var div3 = dom.create('<div id="wrapper">DIV3</div>'); // 父节点
 
 dom.wrap(test, div3);
 /* empty test */
+// const nodes = dom.empty(window.empty);
+// console.log(nodes);
 
-var nodes = dom.empty(window.empty);
-console.log(nodes);
 /* 改 */
 
 /* 用于读写属性  attr(node, attributeName, value) */
@@ -203,7 +217,7 @@ dom.each(dom.children(t), function (n) {
   return dom.style(n, 'color', 'red');
 });
 console.log(dom.index(s2));
-},{}],"C:/Users/Xmasu/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"../../../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -231,7 +245,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "9328" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59202" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -407,5 +421,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/Xmasu/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js","main.js"], null)
+},{}]},{},["../../../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js","main.js"], null)
 //# sourceMappingURL=/main.1f19ae8e.js.map

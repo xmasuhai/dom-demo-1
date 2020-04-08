@@ -127,8 +127,9 @@ window.dom = {
      */
     style(node, name, value) {
         if (arguments.length === 3) {
-            // dom.style(div, 'color: "red"')
-            node.style[name] = value;
+            // dom.style(div, "color", "red"')
+            return node.style[name] = value;
+            // node.style.name = value;
         } else if (arguments.length === 2) {
             if (typeof name === "string") {
                 // 读取 dom.style(div, 'color')
@@ -145,6 +146,7 @@ window.dom = {
                     // node.style.key; // 字符串
                     node.style[key] = object[key];
                 }
+                return object
             }
         }
     },

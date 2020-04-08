@@ -1,3 +1,15 @@
+// 37
+console.log("任务 37 测试代码 开始")
+const div_1 = dom.find("#test_1 > .red")[0];
+console.log(`div_1: ${div_1}`); // 获取对应的元素
+dom.style(div_1, "color", "red"); // 设置 div.style.color
+
+const divList = dom.find(".red")
+
+// 获取多个 div.red 元素
+dom.each(divList, n => console.log(n));
+console.log("任务 37 测试代码 结束")
+
 /* 对比 document.createElement("div") 简化代码
  ** const div = dom.create("div")
  */
@@ -12,8 +24,8 @@ dom.after(test, div);
 const div3 = dom.create('<div id="wrapper">DIV3</div>'); // 父节点
 dom.wrap(test, div3);
 /* empty test */
-const nodes = dom.empty(window.empty);
-console.log(nodes);
+// const nodes = dom.empty(window.empty);
+// console.log(nodes);
 
 /* 改 */
 /* 用于读写属性  attr(node, attributeName, value) */
@@ -57,6 +69,7 @@ dom.on(test, "mouseenter", addFn);
 // test.removeEventListener(eventName, fn) // TL,DR
 dom.off(test, "click", addFn);
 dom.toggle(test, "click", addFn);
+
 /* 查 */
 const testDiv = dom.find('#test')[0]
 console.log(testDiv)

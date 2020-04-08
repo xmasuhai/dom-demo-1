@@ -262,8 +262,8 @@ window.dom = {
    */
   style: function style(node, name, value) {
     if (arguments.length === 3) {
-      // dom.style(div, 'color: "red"')
-      node.style[name] = value;
+      // dom.style(div, "color", "red"')
+      return node.style[name] = value; // node.style.name = value;
     } else if (arguments.length === 2) {
       if (typeof name === "string") {
         // 读取 dom.style(div, 'color')
@@ -283,6 +283,8 @@ window.dom = {
             // node.style.key; // 字符串
             node.style[key] = object[key];
           }
+
+          return object;
         }
     }
   },
@@ -367,7 +369,7 @@ window.dom = {
     return i;
   }
 };
-},{}],"C:/Users/Xmasu/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"../../../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -395,7 +397,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "9328" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59202" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -571,5 +573,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/Xmasu/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js","dom.js"], null)
+},{}]},{},["../../../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js","dom.js"], null)
 //# sourceMappingURL=/dom.1d0b6d56.js.map
