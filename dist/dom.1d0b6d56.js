@@ -306,21 +306,25 @@ window.dom = {
     node.addEventListener(eventName, fn);
   },
   off: function off(node, eventName, fn) {
-    console.log('点击取消事件');
+    console.log("".concat(eventName, "\u53D6\u6D88\u4E8B\u4EF6"));
     node.removeEventListener(eventName, fn);
   },
   toggle: function toggle(node, eventName, fn) {
     node.addEventListener("mousedown", function () {
       console.log("鼠标按下了");
-      node.addEventListener("mousemove", fn);
+      node.addEventListener(eventName, fn);
       node.addEventListener("mouseup", function () {
         console.log("鼠标抬起了");
-        node.removeEventListener("mousemove", fn);
+        node.removeEventListener(eventName, fn);
       });
     });
   },
+
+  /* scope 为查找的范围 节点对象 */
   find: function find(selector, scope) {
+    /* 如果有 scope 节点 就找 scope 里的；没有就找 document 里的 */
     return (scope || document).querySelectorAll(selector);
+    /* 返回的是 NodeList 伪数组 取用加 NodeList[0] */
   },
   parent: function parent(node) {
     return node.parentNode;
@@ -335,6 +339,7 @@ window.dom = {
   },
   next: function next(node) {
     var x = node.nextSibling;
+    /* 排除文本节点 */
 
     while (x && x.nodeType === 3) {
       x = x.nextSibling;
@@ -344,6 +349,7 @@ window.dom = {
   },
   previous: function previous(node) {
     var x = node.previousSibling;
+    /* 排除文本节点 */
 
     while (x && x.nodeType === 3) {
       x = x.previousSibling;
@@ -397,7 +403,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59202" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54629" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

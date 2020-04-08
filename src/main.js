@@ -71,18 +71,31 @@ dom.off(test, "click", addFn);
 dom.toggle(test, "click", addFn);
 
 /* 查 */
+console.log(`---------`)
 const testDiv = dom.find('#test')[0]
+console.log(`testDiv:`)
 console.log(testDiv)
+
 const test2 = dom.find('#test2')[0]
+console.log(`test2>.red`)
 console.log(dom.find('.red', test2)[0])
+console.log(`---------`)
 
+console.log(`=== 找父、兄节点 ===`)
+console.log('parent')
 console.log(dom.parent(test))
-
+console.log('children')
+console.log(dom.children(test2))
+console.log('siblings')
 const s2 = dom.find('#s2')[0]
 console.log(dom.siblings(s2))
+console.log('next')
 console.log(dom.next(s2))
+console.log('previous')
 console.log(dom.previous(s2))
-
+console.log(`=== ===`)
+    /* 遍历 */
 const t = dom.find('#travel')[0]
 dom.each(dom.children(t), (n) => dom.style(n, 'color', 'red'))
+    /* 下标 */
 console.log(dom.index(s2))

@@ -203,19 +203,35 @@ dom.off(test, "click", addFn);
 dom.toggle(test, "click", addFn);
 /* 查 */
 
+console.log("---------");
 var testDiv = dom.find('#test')[0];
+console.log("testDiv:");
 console.log(testDiv);
 var test2 = dom.find('#test2')[0];
+console.log("test2>.red");
 console.log(dom.find('.red', test2)[0]);
+console.log("---------");
+console.log("=== \u627E\u7236\u3001\u5144\u8282\u70B9 ===");
+console.log('parent');
 console.log(dom.parent(test));
+console.log('children');
+console.log(dom.children(test2));
+console.log('siblings');
 var s2 = dom.find('#s2')[0];
 console.log(dom.siblings(s2));
+console.log('next');
 console.log(dom.next(s2));
+console.log('previous');
 console.log(dom.previous(s2));
+console.log("=== ===");
+/* 遍历 */
+
 var t = dom.find('#travel')[0];
 dom.each(dom.children(t), function (n) {
   return dom.style(n, 'color', 'red');
 });
+/* 下标 */
+
 console.log(dom.index(s2));
 },{}],"../../../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -245,7 +261,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59202" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54629" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

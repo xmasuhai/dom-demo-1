@@ -167,21 +167,24 @@ window.dom = {
         node.addEventListener(eventName, fn)
     },
     off(node, eventName, fn) {
-        console.log('点击取消事件')
+        console.log(`${eventName}取消事件`)
         node.removeEventListener(eventName, fn)
     },
     toggle(node, eventName, fn) {
         node.addEventListener("mousedown", function() {
             console.log("鼠标按下了");
-            node.addEventListener("mousemove", fn);
+            node.addEventListener(eventName, fn);
             node.addEventListener("mouseup", function() {
                 console.log("鼠标抬起了");
-                node.removeEventListener("mousemove", fn)
+                node.removeEventListener(eventName, fn)
             })
         });
     },
+    /* scope 为查找的范围 节点对象 */
     find(selector, scope) {
+        /* 如果有 scope 节点 就找 scope 里的；没有就找 document 里的 */
         return (scope || document).querySelectorAll(selector)
+            /* 返回的是 NodeList 伪数组 取用加 NodeList[0] */
     },
     parent(node) {
         return node.parentNode
@@ -195,6 +198,7 @@ window.dom = {
     },
     next(node) {
         let x = node.nextSibling
+            /* 排除文本节点 */
         while (x && x.nodeType === 3) {
             x = x.nextSibling
         }
@@ -202,6 +206,7 @@ window.dom = {
     },
     previous(node) {
         let x = node.previousSibling
+            /* 排除文本节点 */
         while (x && x.nodeType === 3) {
             x = x.previousSibling
         }
