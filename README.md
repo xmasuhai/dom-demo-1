@@ -2,6 +2,10 @@
 
 ```bash
 yarn global add parcel 或者 npm i -g parcel
+
+# 找个干净的目录
+git clone https://github.com/xmasuhai/dom-demo-1.git
+cd dom-demo-1
 parcel src/index.html
 ```
 
