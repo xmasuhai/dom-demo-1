@@ -180,6 +180,7 @@ window.dom = {
             })
         });
     },
+    /* 查 */
     /* scope 为查找的范围 节点对象 */
     find(selector, scope) {
         /* 如果有 scope 节点 就找 scope 里的；没有就找 document 里的 */
